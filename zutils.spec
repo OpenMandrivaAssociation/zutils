@@ -55,3 +55,10 @@ make check
 
 %postun
 %_remove_install_info
+
+
+%changelog
+* Tue Mar 13 2012 Dmitry Mikhirev <dmikhirev@mandriva.org> 0.9-1
++ Revision: 784584
+- imported package zutils
+
