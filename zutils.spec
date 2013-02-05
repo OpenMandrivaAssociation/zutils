@@ -1,13 +1,15 @@
 Name:		zutils
 Summary:	Utilities dealing with compressed files
 Version:	0.9
-Release:	1
+Release:	2
 License:	GPLv3+
 Group:		Archiving/Compression
 URL:		http://www.nongnu.org/zutils/zutils.html
 Source0:	http://download.savannah.gnu.org/releases/zutils/%{name}-%{version}.tar.lz
 BuildRequires:	lzip
-Provides:	gzip-utils
+# MD don't provide it without obsoleting it properly
+# and gzip is actually more current, so ....
+#Provides:	gzip-utils
 Conflicts:	gzip-utils
 
 %description
@@ -32,7 +34,7 @@ The supported compressors are bzip2, gzip, lzip and xz.
 %setup -q
 
 %build
-%configure
+%configure2_5x
 %make
 
 %check
@@ -40,25 +42,13 @@ make check
 
 %install
 %makeinstall_std
-%__install -d -m 755 %{buildroot}/bin
-%__mv %{buildroot}%{_bindir}/zcat %{buildroot}/bin/
-%__ln_s ../../bin/zcat %{buildroot}%{_bindir}/zcat
+install -d -m 755 %{buildroot}/bin
+mv %{buildroot}%{_bindir}/zcat %{buildroot}/bin/
+ln -s ../../bin/zcat %{buildroot}%{_bindir}/zcat
 
 %files
 /bin/zcat
 %{_bindir}/z*
 %{_infodir}/zutils.info*
 %{_mandir}/man1/z*.1*
-
-%post
-%_install_info
-
-%postun
-%_remove_install_info
-
-
-%changelog
-* Tue Mar 13 2012 Dmitry Mikhirev <dmikhirev@mandriva.org> 0.9-1
-+ Revision: 784584
-- imported package zutils
 
