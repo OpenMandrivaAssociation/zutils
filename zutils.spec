@@ -1,7 +1,7 @@
 Name:		zutils
 Summary:	Utilities dealing with compressed files
 Version:	0.9
-Release:	2
+Release:	3
 License:	GPLv3+
 Group:		Archiving/Compression
 URL:		http://www.nongnu.org/zutils/zutils.html
