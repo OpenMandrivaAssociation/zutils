@@ -1,16 +1,17 @@
 Name:		zutils
 Summary:	Utilities dealing with compressed files
-Version:	0.9
-Release:	3
+Version:	1.5
+Release:	1
 License:	GPLv3+
 Group:		Archiving/Compression
 URL:		http://www.nongnu.org/zutils/zutils.html
 Source0:	http://download.savannah.gnu.org/releases/zutils/%{name}-%{version}.tar.lz
 BuildRequires:	lzip
+# (tpg) enable when obsoleting gzip-utils
 # MD don't provide it without obsoleting it properly
 # and gzip is actually more current, so ....
 #Provides:	gzip-utils
-Conflicts:	gzip-utils
+#Conflicts:	gzip-utils
 
 %description
 Zutils is a collection of utilities able to deal with any combination
@@ -28,13 +29,13 @@ Zdiff - Decompresses and compares two files line by line.
 Zgrep - Decompresses and searches files for a regular expression.
 Ztest - Tests integrity of compressed files.
 
-The supported compressors are bzip2, gzip, lzip and xz. 
+The supported compressors are bzip2, gzip, lzip and xz.
 
 %prep
 %setup -q
 
 %build
-%configure2_5x
+%configure
 %make
 
 %check
@@ -42,13 +43,14 @@ make check
 
 %install
 %makeinstall_std
-install -d -m 755 %{buildroot}/bin
-mv %{buildroot}%{_bindir}/zcat %{buildroot}/bin/
-ln -s ../../bin/zcat %{buildroot}%{_bindir}/zcat
+# (tpg) enable when obsoleting gzip-utils
+#install -d -m 755 %{buildroot}/bin
+#mv %{buildroot}%{_bindir}/zcat %{buildroot}/bin/
+#ln -s ../../bin/zcat %{buildroot}%{_bindir}/zcat
 
 %files
-/bin/zcat
+# (tpg) enable when obsoleting gzip-utils
+#/bin/zcat
 %{_bindir}/z*
 %{_infodir}/zutils.info*
 %{_mandir}/man1/z*.1*
-
