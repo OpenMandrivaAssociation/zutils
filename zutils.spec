@@ -6,6 +6,7 @@ License:	GPLv3+
 Group:		Archiving/Compression
 URL:		http://www.nongnu.org/zutils/zutils.html
 Source0:	http://download.savannah.gnu.org/releases/zutils/%{name}-%{version}.tar.lz
+Source1:	%{name}.rpmlintrc
 BuildRequires:	lzip
 # (tpg) enable when obsoleting gzip-utils
 # MD don't provide it without obsoleting it properly
