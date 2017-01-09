@@ -51,6 +51,7 @@ make check
 %files
 # (tpg) enable when obsoleting gzip-utils
 #/bin/zcat
+%{_sysconfdir}/zutilsrc
 %{_bindir}/z*
 %{_infodir}/zutils.info*
 %{_mandir}/man1/z*.1*
