@@ -1,6 +1,6 @@
 Name:		zutils
 Summary:	Utilities dealing with compressed files
-Version:	1.5
+Version:	1.8
 Release:	1
 License:	GPLv3+
 Group:		Archiving/Compression
@@ -37,13 +37,11 @@ The supported compressors are bzip2, gzip, lzip and xz.
 
 %build
 %configure
-%make
-
-%check
-make check
+%make_build
 
 %install
-%makeinstall_std
+%make_install
+
 # (tpg) enable when obsoleting gzip-utils
 #install -d -m 755 %{buildroot}/bin
 #mv %{buildroot}%{_bindir}/zcat %{buildroot}/bin/
