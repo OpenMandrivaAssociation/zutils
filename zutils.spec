@@ -1,6 +1,8 @@
+%global debug_package %{nil}
+
 Name:		zutils
 Summary:	Utilities dealing with compressed files
-Version:	1.8
+Version:	1.9
 Release:	1
 License:	GPLv3+
 Group:		Archiving/Compression
@@ -33,10 +35,10 @@ Ztest - Tests integrity of compressed files.
 The supported compressors are bzip2, gzip, lzip and xz.
 
 %prep
-%setup -q
+%autosetup -p1
+%configure
 
 %build
-%configure
 %make_build
 
 %install
