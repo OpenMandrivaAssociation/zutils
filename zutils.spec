@@ -6,7 +6,7 @@ Version:	1.11
 Release:	1
 License:	GPLv3+
 Group:		Archiving/Compression
-URL:		http://www.nongnu.org/zutils/zutils.html
+URL:		https://www.nongnu.org/zutils/zutils.html
 Source0:	http://download.savannah.gnu.org/releases/zutils/%{name}-%{version}.tar.lz
 Source1:	%{name}.rpmlintrc
 BuildRequires:	lzip
