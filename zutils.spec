@@ -9,6 +9,11 @@ Group:		Archiving/Compression
 URL:		https://www.nongnu.org/zutils/zutils.html
 Source0:	http://download.savannah.gnu.org/releases/zutils/%{name}-%{version}.tar.lz
 Source1:	%{name}.rpmlintrc
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	lzip
 # (tpg) enable when obsoleting gzip-utils
 # MD don't provide it without obsoleting it properly
