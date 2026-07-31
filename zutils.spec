@@ -2,7 +2,7 @@
 
 Name:		zutils
 Summary:	Utilities dealing with compressed files
-Version:	1.11
+Version:	1.16
 Release:	1
 License:	GPLv3+
 Group:		Archiving/Compression
